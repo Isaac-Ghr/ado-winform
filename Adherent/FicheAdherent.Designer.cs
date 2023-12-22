@@ -1,6 +1,6 @@
 ﻿namespace TPlivre
 {
-    partial class FicheAuteur
+    partial class FicheAdherent
     {
         /// <summary>
         /// Required designer variable.
@@ -32,14 +32,22 @@
             lb_num = new Label();
             lb_nom = new Label();
             lb_prenom = new Label();
-            lb_natio = new Label();
+            lb_rue = new Label();
             btn_cancel = new Button();
             btn_submit = new Button();
-            txb_natio = new TextBox();
+            txb_rue = new TextBox();
             bs_fiche = new BindingSource(components);
             txb_prenom = new TextBox();
             txb_nom = new TextBox();
             txb_num = new TextBox();
+            txb_cp = new TextBox();
+            lb_cp = new Label();
+            txb_tel = new TextBox();
+            lb_tel = new Label();
+            txb_ville = new TextBox();
+            lb_ville = new Label();
+            txb_mel = new TextBox();
+            lb_mel = new Label();
             ((System.ComponentModel.ISupportInitialize)bs_fiche).BeginInit();
             SuspendLayout();
             // 
@@ -66,22 +74,22 @@
             lb_prenom.AutoSize = true;
             lb_prenom.Location = new Point(43, 93);
             lb_prenom.Name = "lb_prenom";
-            lb_prenom.Size = new Size(49, 15);
+            lb_prenom.Size = new Size(57, 15);
             lb_prenom.TabIndex = 2;
-            lb_prenom.Text = "Prénom";
+            lb_prenom.Text = "Prenom *";
             // 
-            // lb_natio
+            // lb_rue
             // 
-            lb_natio.AutoSize = true;
-            lb_natio.Location = new Point(43, 122);
-            lb_natio.Name = "lb_natio";
-            lb_natio.Size = new Size(65, 15);
-            lb_natio.TabIndex = 3;
-            lb_natio.Text = "Nationalité";
+            lb_rue.AutoSize = true;
+            lb_rue.Location = new Point(43, 122);
+            lb_rue.Name = "lb_rue";
+            lb_rue.Size = new Size(27, 15);
+            lb_rue.TabIndex = 3;
+            lb_rue.Text = "Rue";
             // 
             // btn_cancel
             // 
-            btn_cancel.Location = new Point(43, 173);
+            btn_cancel.Location = new Point(43, 304);
             btn_cancel.Name = "btn_cancel";
             btn_cancel.Size = new Size(75, 23);
             btn_cancel.TabIndex = 4;
@@ -91,7 +99,7 @@
             // 
             // btn_submit
             // 
-            btn_submit.Location = new Point(209, 173);
+            btn_submit.Location = new Point(209, 304);
             btn_submit.Name = "btn_submit";
             btn_submit.Size = new Size(75, 23);
             btn_submit.TabIndex = 5;
@@ -99,17 +107,17 @@
             btn_submit.UseVisualStyleBackColor = true;
             btn_submit.Click += btn_submit_Click;
             // 
-            // txb_natio
+            // txb_rue
             // 
-            txb_natio.DataBindings.Add(new Binding("Text", bs_fiche, "Nationalite", true));
-            txb_natio.Location = new Point(114, 119);
-            txb_natio.Name = "txb_natio";
-            txb_natio.Size = new Size(170, 23);
-            txb_natio.TabIndex = 6;
+            txb_rue.DataBindings.Add(new Binding("Text", bs_fiche, "AdrRue", true));
+            txb_rue.Location = new Point(114, 119);
+            txb_rue.Name = "txb_rue";
+            txb_rue.Size = new Size(170, 23);
+            txb_rue.TabIndex = 6;
             // 
             // bs_fiche
             // 
-            bs_fiche.DataSource = typeof(Entity.Auteur);
+            bs_fiche.DataSource = typeof(Entity.Adherent);
             // 
             // txb_prenom
             // 
@@ -136,23 +144,99 @@
             txb_num.Size = new Size(170, 23);
             txb_num.TabIndex = 9;
             // 
-            // FicheAuteur
+            // txb_cp
+            // 
+            txb_cp.DataBindings.Add(new Binding("Text", bs_fiche, "AdrCP", true));
+            txb_cp.Location = new Point(114, 148);
+            txb_cp.Name = "txb_cp";
+            txb_cp.Size = new Size(170, 23);
+            txb_cp.TabIndex = 11;
+            // 
+            // lb_cp
+            // 
+            lb_cp.AutoSize = true;
+            lb_cp.Location = new Point(43, 151);
+            lb_cp.Name = "lb_cp";
+            lb_cp.Size = new Size(70, 15);
+            lb_cp.TabIndex = 10;
+            lb_cp.Text = "Code postal";
+            // 
+            // txb_tel
+            // 
+            txb_tel.DataBindings.Add(new Binding("Text", bs_fiche, "Tel", true));
+            txb_tel.Location = new Point(114, 206);
+            txb_tel.Name = "txb_tel";
+            txb_tel.Size = new Size(170, 23);
+            txb_tel.TabIndex = 15;
+            // 
+            // lb_tel
+            // 
+            lb_tel.AutoSize = true;
+            lb_tel.Location = new Point(43, 209);
+            lb_tel.Name = "lb_tel";
+            lb_tel.Size = new Size(61, 15);
+            lb_tel.TabIndex = 14;
+            lb_tel.Text = "Téléphone";
+            // 
+            // txb_ville
+            // 
+            txb_ville.DataBindings.Add(new Binding("Text", bs_fiche, "AdrVille", true));
+            txb_ville.Location = new Point(114, 177);
+            txb_ville.Name = "txb_ville";
+            txb_ville.Size = new Size(170, 23);
+            txb_ville.TabIndex = 13;
+            // 
+            // lb_ville
+            // 
+            lb_ville.AutoSize = true;
+            lb_ville.Location = new Point(43, 180);
+            lb_ville.Name = "lb_ville";
+            lb_ville.Size = new Size(29, 15);
+            lb_ville.TabIndex = 12;
+            lb_ville.Text = "Ville";
+            // 
+            // txb_mel
+            // 
+            txb_mel.DataBindings.Add(new Binding("Text", bs_fiche, "Mel", true));
+            txb_mel.Location = new Point(114, 234);
+            txb_mel.Name = "txb_mel";
+            txb_mel.Size = new Size(170, 23);
+            txb_mel.TabIndex = 17;
+            // 
+            // lb_mel
+            // 
+            lb_mel.AutoSize = true;
+            lb_mel.Location = new Point(43, 237);
+            lb_mel.Name = "lb_mel";
+            lb_mel.Size = new Size(27, 15);
+            lb_mel.TabIndex = 16;
+            lb_mel.Text = "Mél";
+            // 
+            // FicheAdherent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(340, 226);
+            ClientSize = new Size(340, 356);
+            Controls.Add(txb_mel);
+            Controls.Add(lb_mel);
+            Controls.Add(txb_tel);
+            Controls.Add(lb_tel);
+            Controls.Add(txb_ville);
+            Controls.Add(lb_ville);
+            Controls.Add(txb_cp);
+            Controls.Add(lb_cp);
             Controls.Add(txb_num);
             Controls.Add(txb_nom);
             Controls.Add(txb_prenom);
-            Controls.Add(txb_natio);
+            Controls.Add(txb_rue);
             Controls.Add(btn_submit);
             Controls.Add(btn_cancel);
-            Controls.Add(lb_natio);
+            Controls.Add(lb_rue);
             Controls.Add(lb_prenom);
             Controls.Add(lb_nom);
             Controls.Add(lb_num);
-            Name = "FicheAuteur";
-            Text = "FicheAuteur";
+            Name = "FicheAdherent";
+            Text = "FicheAdherent";
             ((System.ComponentModel.ISupportInitialize)bs_fiche).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -163,13 +247,21 @@
         private Label lb_num;
         private Label lb_nom;
         private Label lb_prenom;
-        private Label lb_natio;
+        private Label lb_rue;
         private Button btn_cancel;
         private Button btn_submit;
-        private TextBox txb_natio;
+        private TextBox txb_rue;
         private TextBox txb_prenom;
         private TextBox txb_nom;
         private TextBox txb_num;
         private BindingSource bs_fiche;
+        private TextBox txb_cp;
+        private Label lb_cp;
+        private TextBox txb_tel;
+        private Label lb_tel;
+        private TextBox txb_ville;
+        private Label lb_ville;
+        private TextBox txb_mel;
+        private Label lb_mel;
     }
 }

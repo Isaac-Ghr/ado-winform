@@ -1,6 +1,6 @@
 ﻿namespace TPlivre
 {
-    partial class FicheAuteur
+    partial class FicheGenre
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             lb_num = new Label();
-            lb_nom = new Label();
-            lb_prenom = new Label();
-            lb_natio = new Label();
+            lb_lib = new Label();
             btn_cancel = new Button();
             btn_submit = new Button();
-            txb_natio = new TextBox();
             bs_fiche = new BindingSource(components);
-            txb_prenom = new TextBox();
-            txb_nom = new TextBox();
+            txb_lib = new TextBox();
             txb_num = new TextBox();
             ((System.ComponentModel.ISupportInitialize)bs_fiche).BeginInit();
             SuspendLayout();
@@ -46,38 +42,20 @@
             // lb_num
             // 
             lb_num.AutoSize = true;
-            lb_num.Location = new Point(43, 35);
+            lb_num.Location = new Point(43, 63);
             lb_num.Name = "lb_num";
             lb_num.Size = new Size(59, 15);
             lb_num.TabIndex = 0;
             lb_num.Text = "Numéro *";
             // 
-            // lb_nom
+            // lb_lib
             // 
-            lb_nom.AutoSize = true;
-            lb_nom.Location = new Point(43, 64);
-            lb_nom.Name = "lb_nom";
-            lb_nom.Size = new Size(42, 15);
-            lb_nom.TabIndex = 1;
-            lb_nom.Text = "Nom *";
-            // 
-            // lb_prenom
-            // 
-            lb_prenom.AutoSize = true;
-            lb_prenom.Location = new Point(43, 93);
-            lb_prenom.Name = "lb_prenom";
-            lb_prenom.Size = new Size(49, 15);
-            lb_prenom.TabIndex = 2;
-            lb_prenom.Text = "Prénom";
-            // 
-            // lb_natio
-            // 
-            lb_natio.AutoSize = true;
-            lb_natio.Location = new Point(43, 122);
-            lb_natio.Name = "lb_natio";
-            lb_natio.Size = new Size(65, 15);
-            lb_natio.TabIndex = 3;
-            lb_natio.Text = "Nationalité";
+            lb_lib.AutoSize = true;
+            lb_lib.Location = new Point(43, 92);
+            lb_lib.Name = "lb_lib";
+            lb_lib.Size = new Size(49, 15);
+            lb_lib.TabIndex = 1;
+            lb_lib.Text = "Libelle *";
             // 
             // btn_cancel
             // 
@@ -99,60 +77,40 @@
             btn_submit.UseVisualStyleBackColor = true;
             btn_submit.Click += btn_submit_Click;
             // 
-            // txb_natio
-            // 
-            txb_natio.DataBindings.Add(new Binding("Text", bs_fiche, "Nationalite", true));
-            txb_natio.Location = new Point(114, 119);
-            txb_natio.Name = "txb_natio";
-            txb_natio.Size = new Size(170, 23);
-            txb_natio.TabIndex = 6;
-            // 
             // bs_fiche
             // 
-            bs_fiche.DataSource = typeof(Entity.Auteur);
+            bs_fiche.DataSource = typeof(Entity.Genre);
             // 
-            // txb_prenom
+            // txb_lib
             // 
-            txb_prenom.DataBindings.Add(new Binding("Text", bs_fiche, "Prenom", true));
-            txb_prenom.Location = new Point(114, 90);
-            txb_prenom.Name = "txb_prenom";
-            txb_prenom.Size = new Size(170, 23);
-            txb_prenom.TabIndex = 7;
-            // 
-            // txb_nom
-            // 
-            txb_nom.DataBindings.Add(new Binding("Text", bs_fiche, "Nom", true));
-            txb_nom.Location = new Point(114, 61);
-            txb_nom.Name = "txb_nom";
-            txb_nom.Size = new Size(170, 23);
-            txb_nom.TabIndex = 8;
+            txb_lib.DataBindings.Add(new Binding("Text", bs_fiche, "Libelle", true));
+            txb_lib.Location = new Point(114, 89);
+            txb_lib.Name = "txb_lib";
+            txb_lib.Size = new Size(170, 23);
+            txb_lib.TabIndex = 8;
             // 
             // txb_num
             // 
             txb_num.DataBindings.Add(new Binding("Text", bs_fiche, "Num", true, DataSourceUpdateMode.OnValidation, null, "N2"));
             txb_num.Enabled = false;
-            txb_num.Location = new Point(114, 32);
+            txb_num.Location = new Point(114, 60);
             txb_num.Name = "txb_num";
             txb_num.Size = new Size(170, 23);
             txb_num.TabIndex = 9;
             // 
-            // FicheAuteur
+            // FicheGenre
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(340, 226);
             Controls.Add(txb_num);
-            Controls.Add(txb_nom);
-            Controls.Add(txb_prenom);
-            Controls.Add(txb_natio);
+            Controls.Add(txb_lib);
             Controls.Add(btn_submit);
             Controls.Add(btn_cancel);
-            Controls.Add(lb_natio);
-            Controls.Add(lb_prenom);
-            Controls.Add(lb_nom);
+            Controls.Add(lb_lib);
             Controls.Add(lb_num);
-            Name = "FicheAuteur";
-            Text = "FicheAuteur";
+            Name = "FicheGenre";
+            Text = "FicheGenre";
             ((System.ComponentModel.ISupportInitialize)bs_fiche).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -161,14 +119,14 @@
         #endregion
 
         private Label lb_num;
-        private Label lb_nom;
+        private Label lb_lib;
         private Label lb_prenom;
         private Label lb_natio;
         private Button btn_cancel;
         private Button btn_submit;
         private TextBox txb_natio;
         private TextBox txb_prenom;
-        private TextBox txb_nom;
+        private TextBox txb_lib;
         private TextBox txb_num;
         private BindingSource bs_fiche;
     }

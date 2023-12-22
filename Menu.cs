@@ -27,5 +27,23 @@ namespace TPlivre
             Form_listeAuteur frm = new Form_listeAuteur();
             frm.ShowDialog();
         }
+
+        private void genresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_listeGenre frm = new Form_listeGenre();
+            frm.ShowDialog();
+        }
+
+        private void livresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_listeLivre frm = new Form_listeLivre();
+            frm.ShowDialog();
+        }
+
+        private void adhérentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_listeAdherent frm = new Form_listeAdherent();
+            frm.ShowDialog();
+        }
     }
 }

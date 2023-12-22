@@ -12,25 +12,28 @@ using TPlivre.Entity;
 
 namespace TPlivre
 {
-    public partial class FicheAuteur : Form
+    public partial class FicheLivre : Form
     {
-        Auteur AuteurCourant = new Auteur();
-        public FicheAuteur(bool modif, Auteur a = null)
+        Livre LivreCourant = new Livre();
+        public FicheLivre(bool modif, Livre a = null)
         {
             InitializeComponent();
             try
             {
                 if (a != null)
                 {
-                    AuteurCourant = a;
+                    LivreCourant = a;
                 }
-                else AuteurCourant.Num = 0;
-                bs_fiche.DataSource = AuteurCourant;
+                else LivreCourant.Num = 0;
+                bs_fiche.DataSource = LivreCourant;
                 if (!modif)
                 {
-                    txb_nom.Enabled = false;
-                    txb_prenom.Enabled = false;
-                    txb_natio.Enabled = false;
+                    txb_isbn.Enabled = false;
+                    txb_titre.Enabled = false;
+                    txb_prix.Enabled = false;
+                    txb_editeur.Enabled = false;
+                    txb_annee.Enabled = false;
+                    txb_langue.Enabled = false;
                     btn_submit.Enabled = false;
                 }
             }
@@ -57,22 +60,26 @@ namespace TPlivre
                 return;
             }
 
-            if (AuteurCourant.Num == 0)
+            if (LivreCourant.Num == 0)
             {
-                AuteurCourant = bs_fiche.Current as Auteur;
-                bool res = AuteurManager.AjouteAuteur(AuteurCourant);
+                LivreCourant = bs_fiche.Current as Livre;
+                bool res = LivreManager.AjouteLivre(LivreCourant);
             }
             else
             {
-                AuteurCourant = bs_fiche.Current as Auteur;
-                bool res = AuteurManager.ModifAuteur(AuteurCourant);
+                LivreCourant = bs_fiche.Current as Livre;
+                bool res = LivreManager.ModifLivre(LivreCourant);
             }
             this.Close();
         }
 
         private bool ControleSaisie()
         {
-            return (string.IsNullOrWhiteSpace(txb_nom.Text));
+            return (
+                    string.IsNullOrWhiteSpace(txb_isbn.Text)
+                    ||
+                    string.IsNullOrWhiteSpace(txb_titre.Text)
+                    );
         }
     }
 }

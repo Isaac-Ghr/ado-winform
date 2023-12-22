@@ -1,6 +1,6 @@
 ﻿namespace TPlivre
 {
-    partial class Form_listeAuteur : Form
+    partial class Form_listeGenre : Form
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,71 +29,55 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            dgv_ListeAuteur = new DataGridView();
+            dgv_ListeGenre = new DataGridView();
             numDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            prenomDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nationaliteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            libelleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             bs_table = new BindingSource(components);
             btn_afficher = new Button();
             btn_edit = new Button();
             btn_suppr = new Button();
             btn_add = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgv_ListeAuteur).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_ListeGenre).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bs_table).BeginInit();
             SuspendLayout();
             // 
-            // dgv_ListeAuteur
+            // dgv_ListeGenre
             // 
-            dgv_ListeAuteur.AllowUserToAddRows = false;
-            dgv_ListeAuteur.AllowUserToDeleteRows = false;
-            dgv_ListeAuteur.AutoGenerateColumns = false;
-            dgv_ListeAuteur.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv_ListeAuteur.BorderStyle = BorderStyle.None;
-            dgv_ListeAuteur.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgv_ListeAuteur.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_ListeAuteur.Columns.AddRange(new DataGridViewColumn[] { numDataGridViewTextBoxColumn, nomDataGridViewTextBoxColumn, prenomDataGridViewTextBoxColumn, nationaliteDataGridViewTextBoxColumn });
-            dgv_ListeAuteur.DataSource = bs_table;
-            dgv_ListeAuteur.Location = new Point(12, 12);
-            dgv_ListeAuteur.MultiSelect = false;
-            dgv_ListeAuteur.Name = "dgv_ListeAuteur";
-            dgv_ListeAuteur.ReadOnly = true;
-            dgv_ListeAuteur.RowTemplate.Height = 25;
-            dgv_ListeAuteur.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_ListeAuteur.Size = new Size(575, 398);
-            dgv_ListeAuteur.TabIndex = 0;
+            dgv_ListeGenre.AllowUserToAddRows = false;
+            dgv_ListeGenre.AllowUserToDeleteRows = false;
+            dgv_ListeGenre.AutoGenerateColumns = false;
+            dgv_ListeGenre.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_ListeGenre.BorderStyle = BorderStyle.None;
+            dgv_ListeGenre.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv_ListeGenre.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_ListeGenre.Columns.AddRange(new DataGridViewColumn[] { numDataGridViewTextBoxColumn, libelleDataGridViewTextBoxColumn });
+            dgv_ListeGenre.DataSource = bs_table;
+            dgv_ListeGenre.Location = new Point(12, 12);
+            dgv_ListeGenre.MultiSelect = false;
+            dgv_ListeGenre.Name = "dgv_ListeGenre";
+            dgv_ListeGenre.ReadOnly = true;
+            dgv_ListeGenre.RowTemplate.Height = 25;
+            dgv_ListeGenre.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_ListeGenre.Size = new Size(575, 398);
+            dgv_ListeGenre.TabIndex = 0;
             // 
             // numDataGridViewTextBoxColumn
             // 
             numDataGridViewTextBoxColumn.DataPropertyName = "Num";
-            numDataGridViewTextBoxColumn.HeaderText = "Numéro";
+            numDataGridViewTextBoxColumn.HeaderText = "Num";
             numDataGridViewTextBoxColumn.Name = "numDataGridViewTextBoxColumn";
             numDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // nomDataGridViewTextBoxColumn
+            // libelleDataGridViewTextBoxColumn
             // 
-            nomDataGridViewTextBoxColumn.DataPropertyName = "Nom";
-            nomDataGridViewTextBoxColumn.HeaderText = "Nom";
-            nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prenomDataGridViewTextBoxColumn
-            // 
-            prenomDataGridViewTextBoxColumn.DataPropertyName = "Prenom";
-            prenomDataGridViewTextBoxColumn.HeaderText = "Prenom";
-            prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
-            prenomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nationaliteDataGridViewTextBoxColumn
-            // 
-            nationaliteDataGridViewTextBoxColumn.DataPropertyName = "Nationalite";
-            nationaliteDataGridViewTextBoxColumn.HeaderText = "Nationalité";
-            nationaliteDataGridViewTextBoxColumn.Name = "nationaliteDataGridViewTextBoxColumn";
-            nationaliteDataGridViewTextBoxColumn.ReadOnly = true;
+            libelleDataGridViewTextBoxColumn.DataPropertyName = "Libelle";
+            libelleDataGridViewTextBoxColumn.HeaderText = "Libelle";
+            libelleDataGridViewTextBoxColumn.Name = "libelleDataGridViewTextBoxColumn";
+            libelleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bs_table
             // 
-            bs_table.DataSource = typeof(Entity.Auteur);
+            bs_table.DataSource = typeof(Entity.Genre);
             // 
             // btn_afficher
             // 
@@ -135,7 +119,7 @@
             btn_add.UseVisualStyleBackColor = true;
             btn_add.Click += btn_add_Click;
             // 
-            // Form_listeAuteur
+            // Form_listeGenre
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -144,25 +128,26 @@
             Controls.Add(btn_suppr);
             Controls.Add(btn_edit);
             Controls.Add(btn_afficher);
-            Controls.Add(dgv_ListeAuteur);
-            Name = "Form_listeAuteur";
-            Text = "Liste des auteurs";
-            ((System.ComponentModel.ISupportInitialize)dgv_ListeAuteur).EndInit();
+            Controls.Add(dgv_ListeGenre);
+            Name = "Form_listeGenre";
+            Text = "Liste des genres";
+            ((System.ComponentModel.ISupportInitialize)dgv_ListeGenre).EndInit();
             ((System.ComponentModel.ISupportInitialize)bs_table).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dgv_ListeAuteur;
+        private DataGridView dgv_ListeGenre;
         private Button btn_afficher;
         private Button btn_edit;
         private Button btn_suppr;
         private Button btn_add;
         private BindingSource bs_table;
-        private DataGridViewTextBoxColumn numDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn prenomDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nationaliteDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn numDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn libelleDataGridViewTextBoxColumn;
     }
 }

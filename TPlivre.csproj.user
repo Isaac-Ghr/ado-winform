@@ -4,10 +4,19 @@
     <Compile Update="Auteur\FicheAuteur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="Auteur\ListeAuteur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Auteur\ListeAuteur.cs">
+    <Compile Update="Genre\FicheGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Genre\ListeGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Livre\FicheLivre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Livre\ListeLivre.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Menu.cs">

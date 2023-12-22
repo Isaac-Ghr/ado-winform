@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TPlivre\\TPlivre.csproj": {}
+    "C:\\Users\\Isaac\\Documents\\TPlivre\\TPlivre.csproj": {}
   },
   "projects": {
-    "D:\\TPlivre\\TPlivre.csproj": {
+    "C:\\Users\\Isaac\\Documents\\TPlivre\\TPlivre.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TPlivre\\TPlivre.csproj",
+        "projectUniqueName": "C:\\Users\\Isaac\\Documents\\TPlivre\\TPlivre.csproj",
         "projectName": "TPlivre",
-        "projectPath": "D:\\TPlivre\\TPlivre.csproj",
+        "projectPath": "C:\\Users\\Isaac\\Documents\\TPlivre\\TPlivre.csproj",
         "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
-        "outputPath": "D:\\TPlivre\\obj\\",
+        "outputPath": "C:\\Users\\Isaac\\Documents\\TPlivre\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Isaac\\AppData\\Roaming\\NuGet\\NuGet.Config",

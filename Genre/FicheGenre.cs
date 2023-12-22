@@ -12,25 +12,23 @@ using TPlivre.Entity;
 
 namespace TPlivre
 {
-    public partial class FicheAuteur : Form
+    public partial class FicheGenre : Form
     {
-        Auteur AuteurCourant = new Auteur();
-        public FicheAuteur(bool modif, Auteur a = null)
+        Genre GenreCourant = new Genre();
+        public FicheGenre(bool modif, Genre a = null)
         {
             InitializeComponent();
             try
             {
                 if (a != null)
                 {
-                    AuteurCourant = a;
+                    GenreCourant = a;
                 }
-                else AuteurCourant.Num = 0;
-                bs_fiche.DataSource = AuteurCourant;
+                else GenreCourant.Num = 0;
+                bs_fiche.DataSource = GenreCourant;
                 if (!modif)
                 {
-                    txb_nom.Enabled = false;
-                    txb_prenom.Enabled = false;
-                    txb_natio.Enabled = false;
+                    txb_lib.Enabled = false;
                     btn_submit.Enabled = false;
                 }
             }
@@ -57,22 +55,22 @@ namespace TPlivre
                 return;
             }
 
-            if (AuteurCourant.Num == 0)
+            if (GenreCourant.Num == 0)
             {
-                AuteurCourant = bs_fiche.Current as Auteur;
-                bool res = AuteurManager.AjouteAuteur(AuteurCourant);
+                GenreCourant = bs_fiche.Current as Genre;
+                bool res = GenreManager.AjouteGenre(GenreCourant);
             }
             else
             {
-                AuteurCourant = bs_fiche.Current as Auteur;
-                bool res = AuteurManager.ModifAuteur(AuteurCourant);
+                GenreCourant = bs_fiche.Current as Genre;
+                bool res = GenreManager.ModifGenre(GenreCourant);
             }
             this.Close();
         }
 
         private bool ControleSaisie()
         {
-            return (string.IsNullOrWhiteSpace(txb_nom.Text));
+            return (string.IsNullOrWhiteSpace(txb_lib.Text));
         }
     }
 }

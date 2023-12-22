@@ -12,25 +12,29 @@ using TPlivre.Entity;
 
 namespace TPlivre
 {
-    public partial class FicheAuteur : Form
+    public partial class FicheAdherent : Form
     {
-        Auteur AuteurCourant = new Auteur();
-        public FicheAuteur(bool modif, Auteur a = null)
+        Adherent AdherentCourant = new Adherent();
+        public FicheAdherent(bool modif, Adherent a = null)
         {
             InitializeComponent();
             try
             {
                 if (a != null)
                 {
-                    AuteurCourant = a;
+                    AdherentCourant = a;
                 }
-                else AuteurCourant.Num = 0;
-                bs_fiche.DataSource = AuteurCourant;
+                else AdherentCourant.Num = 0;
+                bs_fiche.DataSource = AdherentCourant;
                 if (!modif)
                 {
                     txb_nom.Enabled = false;
                     txb_prenom.Enabled = false;
-                    txb_natio.Enabled = false;
+                    txb_rue.Enabled = false;
+                    txb_cp.Enabled = false;
+                    txb_ville.Enabled = false;
+                    txb_tel.Enabled = false;
+                    txb_mel.Enabled = false;
                     btn_submit.Enabled = false;
                 }
             }
@@ -57,22 +61,26 @@ namespace TPlivre
                 return;
             }
 
-            if (AuteurCourant.Num == 0)
+            if (AdherentCourant.Num == 0)
             {
-                AuteurCourant = bs_fiche.Current as Auteur;
-                bool res = AuteurManager.AjouteAuteur(AuteurCourant);
+                AdherentCourant = bs_fiche.Current as Adherent;
+                bool res = AdherentManager.AjouteAdherent(AdherentCourant);
             }
             else
             {
-                AuteurCourant = bs_fiche.Current as Auteur;
-                bool res = AuteurManager.ModifAuteur(AuteurCourant);
+                AdherentCourant = bs_fiche.Current as Adherent;
+                bool res = AdherentManager.ModifAdherent(AdherentCourant);
             }
             this.Close();
         }
 
         private bool ControleSaisie()
         {
-            return (string.IsNullOrWhiteSpace(txb_nom.Text));
+            return (
+                    string.IsNullOrWhiteSpace(txb_nom.Text)
+                    ||
+                    string.IsNullOrWhiteSpace(txb_prenom.Text)
+                    );
         }
     }
 }

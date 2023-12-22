@@ -73,18 +73,21 @@
             genresToolStripMenuItem.Name = "genresToolStripMenuItem";
             genresToolStripMenuItem.Size = new Size(180, 22);
             genresToolStripMenuItem.Text = "Genres";
+            genresToolStripMenuItem.Click += genresToolStripMenuItem_Click;
             // 
             // livresToolStripMenuItem
             // 
             livresToolStripMenuItem.Name = "livresToolStripMenuItem";
             livresToolStripMenuItem.Size = new Size(180, 22);
             livresToolStripMenuItem.Text = "Livres";
+            livresToolStripMenuItem.Click += livresToolStripMenuItem_Click;
             // 
             // adhérentToolStripMenuItem
             // 
             adhérentToolStripMenuItem.Name = "adhérentToolStripMenuItem";
             adhérentToolStripMenuItem.Size = new Size(180, 22);
             adhérentToolStripMenuItem.Text = "Adhérent";
+            adhérentToolStripMenuItem.Click += adhérentToolStripMenuItem_Click;
             // 
             // Form_Menu
             // 
